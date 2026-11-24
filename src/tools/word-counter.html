@@ -1,0 +1,45 @@
+<div class="stats" aria-live="polite">
+  <div class="stat"><b id="words">0</b><span>Words</span></div>
+  <div class="stat"><b id="chars">0</b><span>Characters</span></div>
+  <div class="stat"><b id="chars-ns">0</b><span>Characters (no spaces)</span></div>
+  <div class="stat"><b id="sentences">0</b><span>Sentences</span></div>
+  <div class="stat"><b id="paragraphs">0</b><span>Paragraphs</span></div>
+  <div class="stat"><b id="reading">0 min</b><span>Reading time</span></div>
+  <div class="stat"><b id="speaking">0 min</b><span>Speaking time</span></div>
+</div>
+<label class="visually-hidden" for="text">Your text</label>
+<textarea id="text" placeholder="Start typing or paste your text here…" spellcheck="true"></textarea>
+<div class="btn-row">
+  <button class="btn btn--ghost" id="copy" type="button">Copy text</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<div id="keywords-wrap" hidden>
+  <h3>Top keywords</h3>
+  <div class="btn-row" id="keywords"></div>
+</div>
+<!-- content -->
+<h2>How the word counter works</h2>
+<p>Type or paste text into the box and the counts update instantly as you write. Words are sequences of letters or numbers separated by spaces or punctuation, so "don't" and "e-mail" each count as one word, like in Microsoft Word and Google Docs.</p>
+<ul>
+  <li><strong>Reading time</strong> is based on an average silent reading speed of 238 words per minute.</li>
+  <li><strong>Speaking time</strong> uses 140 words per minute, a typical pace for presentations and speeches.</li>
+  <li><strong>Top keywords</strong> show the most-used words (common words like "the" and "and" are ignored), which helps you spot repetition and check SEO keyword focus.</li>
+</ul>
+
+<h2>Common word count limits</h2>
+<table>
+  <thead><tr><th>Type of writing</th><th>Typical length</th></tr></thead>
+  <tbody>
+    <tr><td>Tweet / X post</td><td>280 characters</td></tr>
+    <tr><td>Meta description (SEO)</td><td>150–160 characters</td></tr>
+    <tr><td>Instagram caption</td><td>2,200 characters</td></tr>
+    <tr><td>College application essay</td><td>250–650 words</td></tr>
+    <tr><td>Blog post</td><td>1,000–2,500 words</td></tr>
+    <tr><td>Short story</td><td>1,000–7,500 words</td></tr>
+  </tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is my text saved or sent anywhere?</summary><p>No. Counting happens in your browser and your text is never uploaded or stored.</p></details>
+<details><summary>Does it count words in other languages?</summary><p>Yes. Any language that separates words with spaces is supported, including accented letters and scripts such as Cyrillic, Arabic and Hindi.</p></details>
+<details><summary>How are paragraphs counted?</summary><p>A paragraph is a block of text separated from the next by a line break. Empty lines are ignored.</p></details>

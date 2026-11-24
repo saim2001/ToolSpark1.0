@@ -1,0 +1,67 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">📐</span>
+  <strong>Drop an image here or click to choose</strong>
+  <small>JPG, PNG, WebP, GIF or BMP</small>
+  <input type="file" accept="image/*">
+</label>
+<div id="editor" hidden>
+  <p class="status" id="original"></p>
+  <div class="controls">
+    <label class="field">Width (px)<input id="width" type="number" min="1"></label>
+    <label class="field">Height (px)<input id="height" type="number" min="1"></label>
+    <label class="check"><input id="lock" type="checkbox" checked> Keep aspect ratio</label>
+  </div>
+  <div class="btn-row" id="presets">
+    <button class="btn btn--ghost btn--sm" type="button" data-pct="25">25%</button>
+    <button class="btn btn--ghost btn--sm" type="button" data-pct="50">50%</button>
+    <button class="btn btn--ghost btn--sm" type="button" data-pct="75">75%</button>
+    <button class="btn btn--ghost btn--sm" type="button" data-w="1920">1920 wide</button>
+    <button class="btn btn--ghost btn--sm" type="button" data-w="1280">1280 wide</button>
+    <button class="btn btn--ghost btn--sm" type="button" data-w="1080" data-h="1080">1080×1080 (Instagram)</button>
+  </div>
+  <div class="controls">
+    <label class="field">Format
+      <select id="format">
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+    </label>
+    <label class="field">Quality: <output id="quality-out">90%</output>
+      <input id="quality" type="range" min="10" max="100" value="90">
+    </label>
+  </div>
+  <div class="btn-row">
+    <button class="btn" id="download" type="button">Resize &amp; download</button>
+    <button class="btn btn--ghost" id="reset" type="button">Choose another image</button>
+  </div>
+  <div class="preview"><canvas id="preview"></canvas></div>
+</div>
+<!-- content -->
+<h2>How to resize an image</h2>
+<ol>
+  <li>Choose or drop the image you want to resize.</li>
+  <li>Type a new width or height. With <strong>Keep aspect ratio</strong> on, the other side updates automatically so the image is never stretched.</li>
+  <li>Or click a preset: 25%, 50%, 75%, common web widths, or a 1080×1080 square for Instagram.</li>
+  <li>Pick an output format and click <strong>Resize &amp; download</strong>.</li>
+</ol>
+
+<h2>Common image sizes</h2>
+<table>
+  <thead><tr><th>Use</th><th>Recommended size (px)</th></tr></thead>
+  <tbody>
+    <tr><td>Instagram post (square)</td><td>1080 × 1080</td></tr>
+    <tr><td>Instagram / TikTok story</td><td>1080 × 1920</td></tr>
+    <tr><td>YouTube thumbnail</td><td>1280 × 720</td></tr>
+    <tr><td>Facebook cover</td><td>820 × 312</td></tr>
+    <tr><td>LinkedIn banner</td><td>1584 × 396</td></tr>
+    <tr><td>Website hero image</td><td>1920 wide</td></tr>
+    <tr><td>Passport photo (2×2 in, 300 DPI)</td><td>600 × 600</td></tr>
+  </tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Will resizing reduce image quality?</summary><p>Making an image smaller keeps it sharp. Making it larger than the original cannot add detail, so enlarged images may look soft. For best results, only scale down.</p></details>
+<details><summary>Does the aspect ratio lock crop my image?</summary><p>No. With the lock on, the image is scaled proportionally. If you turn it off and enter both sides, the image will be stretched to fit exactly — nothing is cropped.</p></details>
+<details><summary>Is my image uploaded?</summary><p>No. Resizing is done by your browser on your own device. The image is never sent anywhere.</p></details>
+<details><summary>What happens to transparency?</summary><p>PNG and WebP keep transparent areas. JPG does not support transparency, so transparent areas become white.</p></details>

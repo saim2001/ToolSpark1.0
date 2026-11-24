@@ -1,0 +1,164 @@
+{
+  "categories": [
+    {
+      "id": "image",
+      "name": "Image Tools",
+      "icon": "🖼️"
+    },
+    {
+      "id": "pdf",
+      "name": "PDF Tools",
+      "icon": "📄"
+    },
+    {
+      "id": "text",
+      "name": "Text Tools",
+      "icon": "✍️"
+    },
+    {
+      "id": "utility",
+      "name": "Utility Tools",
+      "icon": "🛠️"
+    }
+  ],
+  "tools": [
+    {
+      "slug": "image-compressor",
+      "category": "image",
+      "name": "Image Compressor",
+      "icon": "🗜️",
+      "title": "Image Compressor – Compress JPG, PNG & WebP Online Free",
+      "description": "Compress JPG, PNG and WebP images online for free. Reduce file size up to 80% without visible quality loss. Files never leave your device.",
+      "lead": "Shrink JPG, PNG and WebP images in seconds. Everything happens in your browser — your photos are never uploaded.",
+      "scripts": []
+    },
+    {
+      "slug": "image-resizer",
+      "category": "image",
+      "name": "Image Resizer",
+      "icon": "📐",
+      "title": "Image Resizer – Resize Images Online by Pixels or Percent",
+      "description": "Resize any image online for free. Change width and height in pixels or by percentage while keeping the aspect ratio. No upload, no signup.",
+      "lead": "Change the dimensions of any photo by pixels or percentage, with aspect ratio lock. Private and instant.",
+      "scripts": []
+    },
+    {
+      "slug": "image-converter",
+      "category": "image",
+      "name": "Image Converter",
+      "icon": "🔄",
+      "title": "Image Converter – Convert PNG, JPG & WebP Online Free",
+      "description": "Convert images between PNG, JPG and WebP for free. Batch convert multiple images at once, right in your browser. No upload required.",
+      "lead": "Convert PNG to JPG, JPG to WebP, WebP to PNG and more — in batches, without uploading anything.",
+      "scripts": []
+    },
+    {
+      "slug": "image-to-pdf",
+      "category": "pdf",
+      "name": "Image to PDF",
+      "icon": "🖼️",
+      "title": "Image to PDF Converter – Convert JPG & PNG to PDF Free",
+      "description": "Convert JPG, PNG and WebP images to a single PDF document online for free. Reorder pages, choose page size and margins. No upload.",
+      "lead": "Combine photos and scans into one PDF. Reorder pages, pick A4 or Letter, and download instantly.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+      ]
+    },
+    {
+      "slug": "merge-pdf",
+      "category": "pdf",
+      "name": "Merge PDF",
+      "icon": "📚",
+      "title": "Merge PDF – Combine PDF Files Online Free",
+      "description": "Merge multiple PDF files into one document online for free. Drag to reorder, then combine in seconds. Files stay on your device.",
+      "lead": "Combine several PDFs into a single file in the order you choose. Nothing is uploaded to a server.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+      ]
+    },
+    {
+      "slug": "split-pdf",
+      "category": "pdf",
+      "name": "Split PDF",
+      "icon": "✂️",
+      "title": "Split PDF – Extract Pages from PDF Online Free",
+      "description": "Split a PDF into multiple files or extract specific pages online for free. Use page ranges like 1-3, 5, 8-10. No upload, no signup.",
+      "lead": "Pull out the pages you need or split a PDF into separate files using simple page ranges.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+      ]
+    },
+    {
+      "slug": "word-counter",
+      "category": "text",
+      "name": "Word Counter",
+      "icon": "🔢",
+      "title": "Word Counter – Count Words, Characters & Reading Time",
+      "description": "Free online word counter. Instantly count words, characters, sentences and paragraphs, and estimate reading and speaking time.",
+      "lead": "Paste or type your text to see words, characters, sentences, paragraphs and reading time update live.",
+      "scripts": []
+    },
+    {
+      "slug": "case-converter",
+      "category": "text",
+      "name": "Case Converter",
+      "icon": "🔠",
+      "title": "Case Converter – UPPERCASE, lowercase, Title Case & More",
+      "description": "Convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, kebab-case and more with one click.",
+      "lead": "Change the letter case of any text instantly — from Title Case for headlines to snake_case for code.",
+      "scripts": []
+    },
+    {
+      "slug": "remove-duplicate-lines",
+      "category": "text",
+      "name": "Remove Duplicate Lines",
+      "icon": "🧹",
+      "title": "Remove Duplicate Lines – Delete Repeated Lines from Text",
+      "description": "Remove duplicate lines from any list or text online. Options to ignore case, trim spaces, remove empty lines and sort the result.",
+      "lead": "Clean up lists of emails, keywords, URLs or anything else by removing repeated lines in one click.",
+      "scripts": []
+    },
+    {
+      "slug": "qr-code-generator",
+      "category": "utility",
+      "name": "QR Code Generator",
+      "icon": "📱",
+      "title": "QR Code Generator – Create Free QR Codes (PNG & SVG)",
+      "description": "Create free QR codes for URLs, text, Wi-Fi, email and phone numbers. Custom colors and size, download as PNG or SVG. No expiry.",
+      "lead": "Generate a QR code for a link, Wi-Fi network, email or any text. Free forever — codes never expire.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"
+      ]
+    },
+    {
+      "slug": "password-generator",
+      "category": "utility",
+      "name": "Password Generator",
+      "icon": "🔐",
+      "title": "Password Generator – Create Strong Random Passwords",
+      "description": "Generate strong, random and secure passwords instantly. Choose length, symbols, numbers and letters. Created locally in your browser.",
+      "lead": "Create strong, truly random passwords using your browser's secure random generator. Nothing is sent or stored.",
+      "scripts": []
+    },
+    {
+      "slug": "json-formatter",
+      "category": "utility",
+      "name": "JSON Formatter",
+      "icon": "🧾",
+      "title": "JSON Formatter & Validator – Beautify and Minify JSON",
+      "description": "Format, beautify, validate and minify JSON online. Find syntax errors with line and column numbers. Fast, free and private.",
+      "lead": "Paste JSON to pretty-print it, minify it, or find exactly where a syntax error is.",
+      "scripts": []
+    },
+    {
+      "slug": "base64-encoder-decoder",
+      "category": "utility",
+      "name": "Base64 Encoder / Decoder",
+      "icon": "🔣",
+      "title": "Base64 Encode & Decode – Text and Files Online",
+      "description": "Encode text to Base64 or decode Base64 to text online, with full UTF-8 and URL-safe support. Convert files to Base64 data URLs.",
+      "lead": "Encode and decode Base64 with full Unicode support, or turn any file into a Base64 data URL.",
+      "scripts": []
+    }
+  ]
+}

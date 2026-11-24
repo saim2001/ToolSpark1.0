@@ -1,0 +1,13 @@
+{
+  "name": "ToolSpark",
+  "tagline": "Free online tools that run in your browser",
+  "url": "https://toolspark.example.com",
+  "email": "hello@toolspark.example.com",
+  "adsense": {
+    "client": "",
+    "slots": {
+      "afterTool": "",
+      "afterContent": ""
+    }
+  }
+}

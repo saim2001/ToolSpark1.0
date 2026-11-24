@@ -1,0 +1,76 @@
+<div class="two-col">
+  <div>
+    <label class="field">Type
+      <select id="type">
+        <option value="url">Website URL</option>
+        <option value="text">Plain text</option>
+        <option value="wifi">Wi-Fi network</option>
+        <option value="email">Email</option>
+        <option value="tel">Phone number</option>
+        <option value="sms">SMS message</option>
+      </select>
+    </label>
+    <div class="controls" data-for="url"><label class="field field--grow">URL<input id="url" type="url" placeholder="https://example.com" value="https://"></label></div>
+    <div class="controls" data-for="text" hidden><label class="field field--grow">Text<textarea id="text" style="min-height:110px" placeholder="Any text"></textarea></label></div>
+    <div class="controls" data-for="wifi" hidden>
+      <label class="field field--grow">Network name (SSID)<input id="ssid" type="text"></label>
+      <label class="field field--grow">Password<input id="wifi-pass" type="text"></label>
+      <label class="field">Security
+        <select id="wifi-enc"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">None</option></select>
+      </label>
+      <label class="check"><input id="wifi-hidden" type="checkbox"> Hidden network</label>
+    </div>
+    <div class="controls" data-for="email" hidden>
+      <label class="field field--grow">Email address<input id="email" type="email" placeholder="name@example.com"></label>
+      <label class="field field--grow">Subject<input id="email-subject" type="text"></label>
+      <label class="field field--grow">Message<input id="email-body" type="text"></label>
+    </div>
+    <div class="controls" data-for="tel" hidden><label class="field field--grow">Phone number<input id="tel" type="tel" placeholder="+1 555 123 4567"></label></div>
+    <div class="controls" data-for="sms" hidden>
+      <label class="field field--grow">Phone number<input id="sms-tel" type="tel" placeholder="+1 555 123 4567"></label>
+      <label class="field field--grow">Message<input id="sms-body" type="text"></label>
+    </div>
+    <div class="controls">
+      <label class="field">Foreground<input id="fg" type="color" value="#000000"></label>
+      <label class="field">Background<input id="bg" type="color" value="#ffffff"></label>
+      <label class="field">Size
+        <select id="size"><option value="256">256 px</option><option value="512" selected>512 px</option><option value="1024">1024 px</option><option value="2048">2048 px (print)</option></select>
+      </label>
+      <label class="field">Error correction
+        <select id="ecl"><option value="L">Low (7%)</option><option value="M" selected>Medium (15%)</option><option value="Q">Quartile (25%)</option><option value="H">High (30%)</option></select>
+      </label>
+    </div>
+  </div>
+  <div class="preview" style="margin-top:0">
+    <canvas id="qr" width="256" height="256" style="width:256px;max-width:100%;height:auto" aria-label="QR code preview"></canvas>
+    <p class="status" id="status"></p>
+    <div class="btn-row" style="justify-content:center">
+      <button class="btn" id="png" type="button">Download PNG</button>
+      <button class="btn btn--ghost" id="svg" type="button">Download SVG</button>
+    </div>
+  </div>
+</div>
+<!-- content -->
+<h2>How to create a QR code</h2>
+<ol>
+  <li>Choose what the QR code should do: open a website, show text, join Wi-Fi, send an email, call or text a number.</li>
+  <li>Fill in the details. The preview updates as you type.</li>
+  <li>Optionally change the colors and size. Keep the foreground dark and the background light so every phone can scan it.</li>
+  <li>Download as <strong>PNG</strong> for screens and documents, or <strong>SVG</strong> for print, since it scales to any size without blurring.</li>
+</ol>
+
+<h2>Do these QR codes expire?</h2>
+<p>Never. These are <strong>static QR codes</strong>: the information is stored directly in the pattern, not behind a redirect link. Many "free" QR generators create dynamic codes that stop working when a trial ends. Codes made here work forever, with no account and no tracking.</p>
+
+<h2>Tips for QR codes that scan reliably</h2>
+<ul>
+  <li>Print at least <strong>2 × 2 cm (0.8 × 0.8 in)</strong>. Bigger is better for scanning from a distance.</li>
+  <li>Leave a blank margin around the code. The download includes one already.</li>
+  <li>Use <strong>High</strong> error correction if the code may get scratched, dirty or partly covered.</li>
+  <li>Always test-scan with your phone camera before printing hundreds of copies.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How does the Wi-Fi QR code work?</summary><p>When scanned with an iPhone or Android camera, it offers to join the network automatically, so guests don't need to type the password. It's ideal for cafés, offices and Airbnb hosts.</p></details>
+<details><summary>Can I use these QR codes commercially?</summary><p>Yes. Use them on business cards, packaging, menus, flyers or anywhere else, free of charge.</p></details>
+<details><summary>Why won't my QR code scan?</summary><p>The most common causes are low contrast (light foreground or dark background), printing too small, or a missing white border. Long text also creates dense codes, so shorten long URLs.</p></details>

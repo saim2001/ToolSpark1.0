@@ -1,0 +1,41 @@
+<div class="two-col">
+  <label class="field">Input
+    <textarea id="input" class="mono" spellcheck="false" placeholder="Type text to encode, or paste Base64 to decode…"></textarea>
+  </label>
+  <label class="field">Output
+    <textarea id="output" class="mono" spellcheck="false" readonly></textarea>
+  </label>
+</div>
+<p class="status" id="status"></p>
+<div class="controls">
+  <label class="check"><input id="url-safe" type="checkbox"> URL-safe (- and _ instead of + and /)</label>
+</div>
+<div class="btn-row">
+  <button class="btn" id="encode" type="button">Encode →</button>
+  <button class="btn" id="decode" type="button">← Decode</button>
+  <button class="btn btn--ghost" id="swap" type="button">Swap</button>
+  <button class="btn btn--ghost" id="copy" type="button">Copy output</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<h3>File to Base64</h3>
+<label class="dropzone" tabindex="0" style="padding:22px 16px">
+  <strong>Drop any file here or click to choose</strong>
+  <small>Get a Base64 data URL for embedding images or files in HTML, CSS or JSON</small>
+  <input type="file">
+</label>
+<!-- content -->
+<h2>What is Base64?</h2>
+<p>Base64 encodes binary data (images, files or any bytes) as plain text using 64 safe characters: A–Z, a–z, 0–9, <code>+</code> and <code>/</code>. It's used wherever binary data has to travel through systems built for text, such as email attachments, JSON APIs, data URLs and HTTP authentication headers.</p>
+<p>Base64 is an <strong>encoding, not encryption</strong>. Anyone can decode it, so never use it to hide passwords or secrets.</p>
+
+<h2>How to use this tool</h2>
+<ul>
+  <li><strong>Encode:</strong> type or paste text and click <strong>Encode</strong>. Emoji and all languages are supported (UTF-8).</li>
+  <li><strong>Decode:</strong> paste a Base64 string and click <strong>Decode</strong>. Standard and URL-safe Base64 are detected automatically, and missing padding is fixed.</li>
+  <li><strong>File to Base64:</strong> drop a file to get a <code>data:</code> URL you can paste straight into an <code>&lt;img src&gt;</code> or CSS <code>url()</code>.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>What is URL-safe Base64?</summary><p>Standard Base64 uses <code>+</code> and <code>/</code>, which have special meanings in URLs. URL-safe Base64 (RFC 4648 §5) replaces them with <code>-</code> and <code>_</code> and usually drops the <code>=</code> padding. JWT tokens use this variant.</p></details>
+<details><summary>Why is the Base64 output larger than the input?</summary><p>Base64 represents every 3 bytes with 4 characters, so encoded data is about 33% larger than the original.</p></details>
+<details><summary>Is my data uploaded?</summary><p>No. Encoding and decoding happen entirely in your browser.</p></details>

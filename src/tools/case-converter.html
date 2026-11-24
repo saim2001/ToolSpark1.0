@@ -1,0 +1,41 @@
+<label class="visually-hidden" for="text">Your text</label>
+<textarea id="text" placeholder="Type or paste your text here, then choose a case below…"></textarea>
+<div class="btn-row" id="cases">
+  <button class="btn btn--ghost" type="button" data-case="upper">UPPERCASE</button>
+  <button class="btn btn--ghost" type="button" data-case="lower">lowercase</button>
+  <button class="btn btn--ghost" type="button" data-case="title">Title Case</button>
+  <button class="btn btn--ghost" type="button" data-case="sentence">Sentence case</button>
+  <button class="btn btn--ghost" type="button" data-case="camel">camelCase</button>
+  <button class="btn btn--ghost" type="button" data-case="pascal">PascalCase</button>
+  <button class="btn btn--ghost" type="button" data-case="snake">snake_case</button>
+  <button class="btn btn--ghost" type="button" data-case="kebab">kebab-case</button>
+  <button class="btn btn--ghost" type="button" data-case="constant">CONSTANT_CASE</button>
+  <button class="btn btn--ghost" type="button" data-case="alternating">aLtErNaTiNg</button>
+  <button class="btn btn--ghost" type="button" data-case="inverse">iNVERSE cASE</button>
+</div>
+<div class="btn-row">
+  <button class="btn" id="copy" type="button">Copy</button>
+  <button class="btn btn--ghost" id="undo" type="button" disabled>Undo</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<!-- content -->
+<h2>Text case styles explained</h2>
+<table>
+  <thead><tr><th>Case</th><th>Example</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td>UPPERCASE</td><td>THE QUICK BROWN FOX</td><td>Headings, emphasis, acronyms</td></tr>
+    <tr><td>lowercase</td><td>the quick brown fox</td><td>Tags, usernames, fixing accidental caps lock</td></tr>
+    <tr><td>Title Case</td><td>The Quick Brown Fox</td><td>Headlines, book and article titles</td></tr>
+    <tr><td>Sentence case</td><td>The quick brown fox. It jumps.</td><td>Normal writing, UI labels</td></tr>
+    <tr><td>camelCase</td><td>theQuickBrownFox</td><td>JavaScript and Java variables</td></tr>
+    <tr><td>PascalCase</td><td>TheQuickBrownFox</td><td>Class and component names</td></tr>
+    <tr><td>snake_case</td><td>the_quick_brown_fox</td><td>Python, database columns</td></tr>
+    <tr><td>kebab-case</td><td>the-quick-brown-fox</td><td>URLs, CSS classes, file names</td></tr>
+    <tr><td>CONSTANT_CASE</td><td>THE_QUICK_BROWN_FOX</td><td>Constants and environment variables</td></tr>
+  </tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How does Title Case handle small words?</summary><p>Short words like "a", "and", "of", "the" and "in" stay lowercase unless they are the first or last word, following common headline style guides (AP and Chicago).</p></details>
+<details><summary>I typed with caps lock on by accident. How do I fix it?</summary><p>Click <strong>iNVERSE cASE</strong> to flip every letter, or <strong>Sentence case</strong> to rewrite it normally.</p></details>
+<details><summary>Is my text stored?</summary><p>No. Conversion happens instantly in your browser and nothing is sent to a server.</p></details>

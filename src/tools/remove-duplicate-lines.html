@@ -1,0 +1,52 @@
+<div class="two-col">
+  <label class="field">Input
+    <textarea id="input" class="mono" placeholder="Paste your list here, one item per line…"></textarea>
+  </label>
+  <label class="field">Result
+    <textarea id="output" class="mono" readonly placeholder="Unique lines appear here"></textarea>
+  </label>
+</div>
+<div class="controls">
+  <label class="check"><input id="ignore-case" type="checkbox"> Ignore case</label>
+  <label class="check"><input id="trim" type="checkbox" checked> Trim spaces</label>
+  <label class="check"><input id="remove-empty" type="checkbox" checked> Remove empty lines</label>
+  <label class="field">Sort
+    <select id="sort">
+      <option value="none">Keep original order</option>
+      <option value="asc">A → Z</option>
+      <option value="desc">Z → A</option>
+    </select>
+  </label>
+</div>
+<p class="status is-ok" id="summary"></p>
+<div class="btn-row">
+  <button class="btn" id="copy" type="button">Copy result</button>
+  <button class="btn btn--ghost" id="download" type="button">Download .txt</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<!-- content -->
+<h2>How to remove duplicate lines</h2>
+<ol>
+  <li>Paste your text into the <strong>Input</strong> box, with one item per line.</li>
+  <li>Duplicates are removed instantly and the unique lines appear in <strong>Result</strong>.</li>
+  <li>Adjust the options if needed, then copy or download the cleaned list.</li>
+</ol>
+
+<h2>Options</h2>
+<ul>
+  <li><strong>Ignore case</strong> treats "Apple" and "apple" as the same line. The first version found is kept.</li>
+  <li><strong>Trim spaces</strong> ignores spaces at the start and end of lines, so "apple " matches "apple".</li>
+  <li><strong>Remove empty lines</strong> deletes blank lines from the result.</li>
+  <li><strong>Sort</strong> orders the result alphabetically, with natural number ordering (2 comes before 10).</li>
+</ul>
+
+<h2>What people use it for</h2>
+<ul>
+  <li>Cleaning email lists before importing them into a newsletter tool.</li>
+  <li>De-duplicating SEO keyword lists, URLs or hashtags.</li>
+  <li>Removing repeated entries from exported spreadsheet columns or log files.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>How many lines can it handle?</summary><p>Hundreds of thousands of lines are processed in a fraction of a second on most devices.</p></details>
+<details><summary>Is my data private?</summary><p>Yes. Everything runs locally in your browser and nothing you paste is uploaded.</p></details>

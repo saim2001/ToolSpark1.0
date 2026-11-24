@@ -1,0 +1,46 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">🔄</span>
+  <strong>Drop images here or click to choose</strong>
+  <small>JPG, PNG, WebP, GIF, BMP, SVG · multiple files allowed</small>
+  <input type="file" accept="image/*" multiple>
+</label>
+<div class="controls">
+  <label class="field">Convert to
+    <select id="format">
+      <option value="image/jpeg">JPG</option>
+      <option value="image/png">PNG</option>
+      <option value="image/webp" selected>WebP</option>
+    </select>
+  </label>
+  <label class="field" id="quality-field">Quality: <output id="quality-out">90%</output>
+    <input id="quality" type="range" min="10" max="100" value="90">
+  </label>
+</div>
+<ul class="file-list" id="files"></ul>
+<div class="btn-row" id="actions" hidden>
+  <button class="btn" id="download-all" type="button">Download all</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<!-- content -->
+<h2>How to convert images</h2>
+<ol>
+  <li>Add one or more images by dropping them in the box or clicking to browse.</li>
+  <li>Choose the format you want: <strong>JPG</strong>, <strong>PNG</strong> or <strong>WebP</strong>.</li>
+  <li>For JPG and WebP, set the quality (90% looks identical to the original for most images).</li>
+  <li>Download each converted file or use <strong>Download all</strong>.</li>
+</ol>
+
+<h2>Popular conversions</h2>
+<ul>
+  <li><strong>WebP to JPG</strong> — open images saved from websites in any app or photo editor.</li>
+  <li><strong>PNG to JPG</strong> — make screenshots and graphics much smaller for email and uploads.</li>
+  <li><strong>JPG to WebP</strong> — speed up your website with files 25–35% smaller.</li>
+  <li><strong>JPG to PNG</strong> — get a lossless copy for editing without further quality loss.</li>
+  <li><strong>SVG to PNG</strong> — turn a vector logo into an image you can paste anywhere.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Can I convert HEIC photos from my iPhone?</summary><p>HEIC support depends on your browser. Safari can open HEIC files, so on a Mac or iPhone you can convert them to JPG here. Chrome and Firefox on Windows usually cannot read HEIC yet.</p></details>
+<details><summary>What happens to transparent backgrounds?</summary><p>PNG and WebP keep transparency. JPG doesn't support it, so transparent areas are filled with white.</p></details>
+<details><summary>Are animated GIFs supported?</summary><p>Only the first frame of an animated GIF is converted, since JPG and PNG are still-image formats.</p></details>
+<details><summary>Is it safe for private images?</summary><p>Yes. Conversion runs locally in your browser and nothing is uploaded to any server.</p></details>

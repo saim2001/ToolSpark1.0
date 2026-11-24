@@ -1,0 +1,38 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">📚</span>
+  <strong>Drop PDF files here or click to choose</strong>
+  <small>Select two or more PDFs · reorder before merging</small>
+  <input type="file" accept="application/pdf,.pdf" multiple>
+</label>
+<ul class="file-list" id="files"></ul>
+<div id="options" hidden>
+  <div class="btn-row">
+    <button class="btn" id="merge" type="button">Merge PDFs</button>
+    <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+  </div>
+  <p class="status" id="status"></p>
+</div>
+<!-- content -->
+<h2>How to merge PDF files</h2>
+<ol>
+  <li>Select or drop two or more PDF files into the box above.</li>
+  <li>Arrange them in the order you want using the ↑ and ↓ buttons.</li>
+  <li>Click <strong>Merge PDFs</strong>. Your combined file downloads immediately.</li>
+</ol>
+
+<h2>Why merge PDFs in your browser?</h2>
+<p>Most online PDF tools upload your documents to their servers. Contracts, bank statements, invoices and ID scans are sensitive, so {{site.name}} merges files locally on your device. That's faster, too: there's no upload or download wait, even for large files.</p>
+
+<h2>Common uses</h2>
+<ul>
+  <li>Combine invoices or receipts for an expense report.</li>
+  <li>Join chapters or scanned pages into one document.</li>
+  <li>Bundle a CV, cover letter and certificates into a single application file.</li>
+  <li>Merge signed contract pages back into the full agreement.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is there a file size limit?</summary><p>No limit is imposed by us. Merging hundreds of megabytes works on most computers; phones may struggle with extremely large files.</p></details>
+<details><summary>Will the quality change?</summary><p>No. Pages are copied exactly as they are, so text, images and formatting are untouched.</p></details>
+<details><summary>Can I merge password-protected PDFs?</summary><p>Encrypted PDFs need to be unlocked first. Open them with the password and "print to PDF" or save an unprotected copy, then merge.</p></details>
+<details><summary>Can I remove pages before merging?</summary><p>Yes. Use our <a href="/split-pdf/">Split PDF</a> tool to extract only the pages you need, then merge the results here.</p></details>

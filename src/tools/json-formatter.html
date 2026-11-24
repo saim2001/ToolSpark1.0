@@ -1,0 +1,50 @@
+<div class="two-col">
+  <label class="field">Input JSON
+    <textarea id="input" class="mono" spellcheck="false" placeholder='{"name": "ToolSpark", "tools": 13, "free": true}'></textarea>
+  </label>
+  <label class="field">Output
+    <textarea id="output" class="mono" spellcheck="false" readonly></textarea>
+  </label>
+</div>
+<p class="status" id="status"></p>
+<div class="controls">
+  <label class="field">Indent
+    <select id="indent"><option value="2">2 spaces</option><option value="4">4 spaces</option><option value="tab">Tab</option></select>
+  </label>
+  <label class="check"><input id="sort-keys" type="checkbox"> Sort keys A→Z</label>
+</div>
+<div class="btn-row">
+  <button class="btn" id="format" type="button">Format / Beautify</button>
+  <button class="btn btn--ghost" id="minify" type="button">Minify</button>
+  <button class="btn btn--ghost" id="copy" type="button">Copy output</button>
+  <button class="btn btn--ghost" id="download" type="button">Download .json</button>
+  <button class="btn btn--ghost" id="sample" type="button">Load sample</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<!-- content -->
+<h2>How to use the JSON formatter</h2>
+<ol>
+  <li>Paste your JSON into the <strong>Input</strong> box. It's validated as you type.</li>
+  <li>Click <strong>Format / Beautify</strong> to pretty-print it with your chosen indentation, or <strong>Minify</strong> to strip all whitespace.</li>
+  <li>If there's a syntax error, the exact line and column are shown and the cursor jumps there.</li>
+</ol>
+
+<h2>Common JSON errors and how to fix them</h2>
+<table>
+  <thead><tr><th>Error</th><th>Wrong</th><th>Right</th></tr></thead>
+  <tbody>
+    <tr><td>Trailing comma</td><td><code>{"a": 1,}</code></td><td><code>{"a": 1}</code></td></tr>
+    <tr><td>Single quotes</td><td><code>{'a': 'b'}</code></td><td><code>{"a": "b"}</code></td></tr>
+    <tr><td>Unquoted keys</td><td><code>{a: 1}</code></td><td><code>{"a": 1}</code></td></tr>
+    <tr><td>Comments</td><td><code>{"a": 1 // note}</code></td><td>JSON does not allow comments</td></tr>
+    <tr><td>Missing comma</td><td><code>{"a": 1 "b": 2}</code></td><td><code>{"a": 1, "b": 2}</code></td></tr>
+  </tbody>
+</table>
+
+<h2>What is JSON?</h2>
+<p>JSON (JavaScript Object Notation) is a lightweight text format for structured data. It's the standard way web APIs exchange data, and it's used for configuration files such as <code>package.json</code>. It supports objects, arrays, strings, numbers, booleans (<code>true</code>/<code>false</code>) and <code>null</code>.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is my JSON sent to a server?</summary><p>No. Parsing and formatting use your browser's built-in JSON engine, so API keys, tokens and private data in your JSON stay on your device.</p></details>
+<details><summary>Can it handle large files?</summary><p>Yes. Files of several megabytes format in well under a second on modern devices.</p></details>
+<details><summary>What does "Sort keys" do?</summary><p>It orders every object's keys alphabetically, at all nesting levels. That makes two JSON documents much easier to compare.</p></details>

@@ -1,0 +1,59 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">🗜️</span>
+  <strong>Drop images here or click to choose</strong>
+  <small>JPG, PNG or WebP · multiple files allowed</small>
+  <input type="file" accept="image/jpeg,image/png,image/webp" multiple>
+</label>
+<div class="controls">
+  <label class="field">Quality: <output id="quality-out">75%</output>
+    <input id="quality" type="range" min="10" max="95" value="75">
+  </label>
+  <label class="field">Output format
+    <select id="format">
+      <option value="original">Same as original</option>
+      <option value="image/jpeg">JPG</option>
+      <option value="image/webp">WebP (smallest)</option>
+    </select>
+  </label>
+  <label class="field">Max width (px, optional)
+    <input id="max-width" type="number" min="1" placeholder="e.g. 1920">
+  </label>
+</div>
+<ul class="file-list" id="files"></ul>
+<div class="btn-row" id="actions" hidden>
+  <button class="btn" id="download-all" type="button">Download all</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<p class="status" id="summary"></p>
+<!-- content -->
+<h2>How to compress an image</h2>
+<ol>
+  <li>Drop one or more JPG, PNG or WebP images into the box above, or click it to pick files.</li>
+  <li>Adjust the <strong>quality</strong> slider. 70–80% is the sweet spot for most photos: much smaller files with no visible difference.</li>
+  <li>Optionally pick a different output format or a maximum width to shrink large photos further.</li>
+  <li>Click <strong>Download</strong> next to each image, or <strong>Download all</strong>.</li>
+</ol>
+
+<h2>Why compress images?</h2>
+<p>Large images slow down websites, fill up email attachments and eat into storage. A photo straight from a modern phone is often 3–8 MB, while a compressed version that looks identical on screen can be 300–800 KB. Smaller images mean:</p>
+<ul>
+  <li><strong>Faster websites</strong> — page speed is a Google ranking factor and keeps visitors from leaving.</li>
+  <li><strong>Easier sharing</strong> — stay under email and upload size limits for forms, job portals and social media.</li>
+  <li><strong>Less storage</strong> — fit more photos on your phone, cloud drive or server.</li>
+</ul>
+
+<h2>Which format should I choose?</h2>
+<table>
+  <thead><tr><th>Format</th><th>Best for</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>JPG</td><td>Photos</td><td>Universally supported. No transparency.</td></tr>
+    <tr><td>WebP</td><td>Websites, photos and graphics</td><td>Usually 25–35% smaller than JPG at the same quality. Supports transparency.</td></tr>
+    <tr><td>PNG</td><td>Screenshots, logos, graphics with text</td><td>Lossless, so quality settings don't reduce PNG size. Convert to WebP for big savings.</td></tr>
+  </tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Are my images uploaded to a server?</summary><p>No. Compression happens entirely inside your browser using the HTML5 canvas. Your images never leave your device, which also makes this tool fast and safe for private photos.</p></details>
+<details><summary>Why is my compressed PNG not smaller?</summary><p>PNG is a lossless format, so the quality slider has no effect on it. Choose WebP (keeps transparency) or JPG as the output format to dramatically shrink PNG files.</p></details>
+<details><summary>Will compression remove photo metadata?</summary><p>Yes. Re-encoding strips EXIF metadata such as camera model and GPS location, which is good for privacy when sharing photos online.</p></details>
+<details><summary>Is there a file size or number limit?</summary><p>There are no limits set by us. Very large images (50+ megapixels) depend on your device's memory, but typical photos compress in under a second.</p></details>
