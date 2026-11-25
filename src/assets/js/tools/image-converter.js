@@ -31,11 +31,13 @@
   });
 
   async function convert(item) {
+    const run = (item.run = (item.run || 0) + 1);
     const type = format.value;
     // SVGs without explicit dimensions report 0 — fall back to a sensible size.
     const w = item.img.naturalWidth || 1024;
     const h = item.img.naturalHeight || 1024;
     const blob = await canvasToBlob(drawToCanvas(item.img, w, h, type), type, quality.value / 100);
+    if (run !== item.run) return; // settings changed while encoding; a newer run owns the result
     item.result = { blob, name: renameExt(item.file.name, type) };
     $('.file-item__meta', item.li).innerHTML =
       `${formatBytes(item.file.size)} → <strong>${EXT[type].toUpperCase()}</strong> · ${formatBytes(blob.size)}`;

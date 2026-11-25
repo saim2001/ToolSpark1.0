@@ -1,8 +1,8 @@
 {
-  "name": "ToolSpark",
+  "name": "KitKettle",
   "tagline": "Free online tools that run in your browser",
-  "url": "https://toolspark.example.com",
-  "email": "hello@toolspark.example.com",
+  "url": "https://kitkettle.com",
+  "email": "hello@kitkettle.com",
   "adsense": {
     "client": "",
     "slots": {

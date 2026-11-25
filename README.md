@@ -1,4 +1,4 @@
-# ToolSpark
+# KitKettle
 
 Free online file and utility tools that run entirely in the browser. It's a plain static site with no framework and no server, so it can be hosted free on Cloudflare Pages, Netlify or GitHub Pages.
 

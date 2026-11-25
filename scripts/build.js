@@ -68,7 +68,7 @@ ${adsHead}
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="logo" href="/"><span class="logo__mark" aria-hidden="true">⚡</span>${esc(site.name)}</a>
+    <a class="logo" href="/"><img class="logo__mark" src="/favicon.svg" alt="" width="30" height="30">${esc(site.name)}</a>
     <nav class="site-nav" aria-label="Main">
       ${categories.map((c) => `<a href="/#${c.id}">${esc(c.name.replace(' Tools', ''))}</a>`).join('')}
     </nav>

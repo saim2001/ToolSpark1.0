@@ -3,7 +3,7 @@
   const input = $('#input');
   const output = $('#output');
   const status = $('#status');
-  const SAMPLE = '{"site":"ToolSpark","free":true,"tools":[{"name":"JSON Formatter","category":"utility"},{"name":"Merge PDF","category":"pdf"}],"stats":{"users":null,"rating":4.9}}';
+  const SAMPLE = '{"site":"KitKettle","free":true,"tools":[{"name":"JSON Formatter","category":"utility"},{"name":"Merge PDF","category":"pdf"}],"stats":{"users":null,"rating":4.9}}';
 
   const sortKeys = (v) => Array.isArray(v) ? v.map(sortKeys)
     : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, sortKeys(v[k])])) : v;

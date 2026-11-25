@@ -28,6 +28,7 @@
   });
 
   async function compress(item) {
+    const run = (item.run = (item.run || 0) + 1);
     const fmt = $('#format').value;
     const type = fmt === 'original' ? (item.file.type === 'image/png' ? 'image/png' : item.file.type) : fmt;
     const maxW = parseInt($('#max-width').value, 10);
@@ -35,6 +36,7 @@
     if (maxW > 0 && w > maxW) { h = (h * maxW) / w; w = maxW; }
     const canvas = drawToCanvas(item.img, w, h, type);
     let blob = await canvasToBlob(canvas, type, quality.value / 100);
+    if (run !== item.run) return; // settings changed while encoding; a newer run owns the result
     let note = '';
     // If re-encoding didn't help and nothing else changed, keep the original file.
     if (blob.size >= item.file.size && type === item.file.type && !(maxW > 0 && item.img.naturalWidth > maxW)) {
