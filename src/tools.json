@@ -53,6 +53,26 @@
       "scripts": []
     },
     {
+      "slug": "crop-image",
+      "category": "image",
+      "name": "Crop Image",
+      "icon": "🔲",
+      "title": "Crop Image Online – Free Photo Cropper with Aspect Ratios",
+      "description": "Crop images online for free. Drag to select an area, use preset ratios like 1:1, 16:9 and 4:3, and download as JPG, PNG or WebP. No upload.",
+      "lead": "Drag to select the part of the photo you want to keep. Lock to square, 16:9 or other ratios. Nothing is uploaded.",
+      "scripts": []
+    },
+    {
+      "slug": "rotate-image",
+      "category": "image",
+      "name": "Rotate & Flip Image",
+      "icon": "↪️",
+      "title": "Rotate Image Online – Rotate & Flip Photos Free",
+      "description": "Rotate images 90°, 180° or any angle and flip them horizontally or vertically. Fix sideways photos online for free, without uploading.",
+      "lead": "Fix sideways photos, mirror selfies or straighten a tilted horizon. Rotate by 90° steps or any custom angle.",
+      "scripts": []
+    },
+    {
       "slug": "image-to-pdf",
       "category": "pdf",
       "name": "Image to PDF",
@@ -89,6 +109,44 @@
       ]
     },
     {
+      "slug": "pdf-to-jpg",
+      "category": "pdf",
+      "name": "PDF to JPG",
+      "icon": "🖼️",
+      "title": "PDF to JPG – Convert PDF Pages to Images Free",
+      "description": "Convert PDF pages to high-quality JPG or PNG images online for free. Choose resolution, convert all pages or just one. No upload.",
+      "lead": "Turn every page of a PDF into a JPG or PNG image at the resolution you need. Your PDF never leaves your device.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+      ]
+    },
+    {
+      "slug": "compress-pdf",
+      "category": "pdf",
+      "name": "Compress PDF",
+      "icon": "🗜️",
+      "title": "Compress PDF – Reduce PDF File Size Online Free",
+      "description": "Reduce PDF file size online for free. Ideal for scanned documents and image-heavy PDFs that are too big to email or upload. No upload.",
+      "lead": "Shrink scanned and image-heavy PDFs so they fit email and upload limits. Processed privately in your browser.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+      ]
+    },
+    {
+      "slug": "rotate-pdf",
+      "category": "pdf",
+      "name": "Rotate PDF",
+      "icon": "🔃",
+      "title": "Rotate PDF – Rotate PDF Pages Online Free",
+      "description": "Rotate PDF pages online for free. Rotate all pages or individual pages by 90°, 180° or 270°, with page previews. No upload, no signup.",
+      "lead": "Fix upside-down or sideways scans. Rotate every page at once or click individual pages.",
+      "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"
+      ]
+    },
+    {
       "slug": "word-counter",
       "category": "text",
       "name": "Word Counter",
@@ -116,6 +174,26 @@
       "title": "Remove Duplicate Lines – Delete Repeated Lines from Text",
       "description": "Remove duplicate lines from any list or text online. Options to ignore case, trim spaces, remove empty lines and sort the result.",
       "lead": "Clean up lists of emails, keywords, URLs or anything else by removing repeated lines in one click.",
+      "scripts": []
+    },
+    {
+      "slug": "text-diff",
+      "category": "text",
+      "name": "Text Compare (Diff)",
+      "icon": "🆚",
+      "title": "Text Compare – Find the Difference Between Two Texts",
+      "description": "Compare two texts online and highlight the differences line by line and word by word. Free diff checker for documents, code and lists.",
+      "lead": "Paste two versions of a text to see exactly what was added, removed or changed — highlighted line by line.",
+      "scripts": []
+    },
+    {
+      "slug": "lorem-ipsum-generator",
+      "category": "text",
+      "name": "Lorem Ipsum Generator",
+      "icon": "📝",
+      "title": "Lorem Ipsum Generator – Placeholder Text for Designs",
+      "description": "Generate lorem ipsum placeholder text by paragraphs, sentences or words. Copy as plain text or HTML for websites, mockups and layouts.",
+      "lead": "Generate dummy text for mockups and layouts — as many paragraphs, sentences or words as you need.",
       "scripts": []
     },
     {
@@ -158,6 +236,36 @@
       "title": "Base64 Encode & Decode – Text and Files Online",
       "description": "Encode text to Base64 or decode Base64 to text online, with full UTF-8 and URL-safe support. Convert files to Base64 data URLs.",
       "lead": "Encode and decode Base64 with full Unicode support, or turn any file into a Base64 data URL.",
+      "scripts": []
+    },
+    {
+      "slug": "unit-converter",
+      "category": "utility",
+      "name": "Unit Converter",
+      "icon": "📏",
+      "title": "Unit Converter – Length, Weight, Temperature & More",
+      "description": "Free unit converter for length, weight, temperature, volume, area, speed, time, data storage, pressure and energy. Instant metric and imperial conversion.",
+      "lead": "Convert between metric and imperial units instantly — length, weight, temperature, volume, speed, data and more.",
+      "scripts": []
+    },
+    {
+      "slug": "color-picker",
+      "category": "utility",
+      "name": "Color Picker",
+      "icon": "🎨",
+      "title": "Color Picker – HEX, RGB & HSL Converter + Pick from Image",
+      "description": "Pick colors and convert between HEX, RGB and HSL. Grab colors from any image, generate tints and shades, and check contrast for accessibility.",
+      "lead": "Choose a color, convert it between HEX, RGB and HSL, or pick any color straight from an image.",
+      "scripts": []
+    },
+    {
+      "slug": "url-encoder-decoder",
+      "category": "utility",
+      "name": "URL Encoder / Decoder",
+      "icon": "🔗",
+      "title": "URL Encode & Decode Online – Percent Encoding Tool",
+      "description": "Encode or decode URLs and query strings online. Converts special characters to percent-encoding and breaks URLs into readable parts.",
+      "lead": "Percent-encode text for URLs, decode encoded links, and break any URL into its parts and query parameters.",
       "scripts": []
     }
   ]

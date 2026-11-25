@@ -1,0 +1,51 @@
+<div class="two-col">
+  <div>
+    <div class="swatch" id="swatch">#4F46E5</div>
+    <div class="btn-row">
+      <label class="btn btn--ghost" style="position:relative">🎨 Choose color
+        <input id="native" type="color" value="#4f46e5" style="position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%">
+      </label>
+      <button class="btn btn--ghost" id="eyedropper" type="button" hidden>💧 Pick from screen</button>
+    </div>
+  </div>
+  <div class="color-fields">
+    <label class="field">HEX<div class="output-box"><input id="hex" type="text" spellcheck="false"><button class="btn btn--ghost" type="button" data-copy="hex">Copy</button></div></label>
+    <label class="field">RGB<div class="output-box"><input id="rgb" type="text" spellcheck="false"><button class="btn btn--ghost" type="button" data-copy="rgb">Copy</button></div></label>
+    <label class="field">HSL<div class="output-box"><input id="hsl" type="text" spellcheck="false"><button class="btn btn--ghost" type="button" data-copy="hsl">Copy</button></div></label>
+    <p class="status" id="contrast" style="margin:0"></p>
+  </div>
+</div>
+<h3>Tints &amp; shades <small style="font-weight:400;color:var(--muted)">(click to select)</small></h3>
+<div class="swatch-row" id="shades"></div>
+<h3>Pick a color from an image</h3>
+<label class="dropzone" tabindex="0" style="padding:22px 16px">
+  <strong>Drop an image here or click to choose</strong>
+  <small>Then click anywhere on the image to grab that color</small>
+  <input type="file" accept="image/*">
+</label>
+<div class="preview" id="picker-wrap" hidden><canvas class="picker-canvas" id="picker"></canvas></div>
+<!-- content -->
+<h2>How to use the color picker</h2>
+<ul>
+  <li><strong>Choose a color</strong> with the picker, or type any HEX, RGB or HSL value. The other formats update instantly.</li>
+  <li><strong>Pick from an image</strong>: upload a photo, logo or screenshot and click any pixel to get its exact color.</li>
+  <li><strong>Pick from screen</strong> (Chrome and Edge): grab a color from anywhere on your screen.</li>
+  <li><strong>Tints &amp; shades</strong> give you lighter and darker versions of your color, which is handy for building a palette or hover states.</li>
+</ul>
+
+<h2>HEX vs RGB vs HSL</h2>
+<table>
+  <thead><tr><th>Format</th><th>Example</th><th>Best for</th></tr></thead>
+  <tbody>
+    <tr><td>HEX</td><td><code>#4F46E5</code></td><td>Web design, CSS, design tools. Compact and easy to copy.</td></tr>
+    <tr><td>RGB</td><td><code>rgb(79, 70, 229)</code></td><td>Screens and code. Red, green and blue values from 0–255.</td></tr>
+    <tr><td>HSL</td><td><code>hsl(243, 75%, 59%)</code></td><td>Adjusting colors: change lightness or saturation while keeping the same hue.</td></tr>
+  </tbody>
+</table>
+
+<h2>Color contrast and accessibility</h2>
+<p>The contrast check shows how readable white or black text would be on your color, using the WCAG 2 contrast ratio. A ratio of at least <strong>4.5:1</strong> passes AA for normal text, and <strong>3:1</strong> passes for large text (24px+, or 19px+ bold). Good contrast makes your design readable for everyone, including people with low vision.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is my image uploaded when I pick colors from it?</summary><p>No. The image is loaded into your browser only, and nothing is sent anywhere.</p></details>
+<details><summary>Why isn't "Pick from screen" showing?</summary><p>It uses the EyeDropper API, which is currently available in Chrome, Edge and Opera on desktop. On other browsers, take a screenshot and use "Pick a color from an image" instead.</p></details>

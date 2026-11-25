@@ -104,6 +104,29 @@
     return name.replace(/\.[^.]+$/, '') + '.' + (EXT[type] || 'bin');
   }
 
+  // pdf.js helpers (only usable on pages that load pdf.min.js).
+  const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  function openPdf(bytes) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+    // pdf.js transfers (detaches) the buffer it is given, so hand it a copy.
+    return pdfjsLib.getDocument({ data: new Uint8Array(bytes).slice() }).promise;
+  }
+  async function renderPdfPage(pdf, pageNumber, scale) {
+    const page = await pdf.getPage(pageNumber);
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    await page.render({ canvasContext: ctx, viewport }).promise;
+    page.cleanup();
+    return canvas;
+  }
+  const pdfLoadError = (err, name = 'this PDF') =>
+    /password/i.test(err.name + err.message) || /encrypt/i.test(err.message) ? `${name} is password-protected` : `Could not read ${name}`;
+
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
@@ -120,5 +143,8 @@
     });
   }
 
-  window.TS = { $, $$, formatBytes, toast, copyText, download, dropzone, loadImage, canvasToBlob, drawToCanvas, renameExt, escapeHtml, EXT };
+  window.TS = {
+    $, $$, formatBytes, toast, copyText, download, dropzone, loadImage, canvasToBlob, drawToCanvas, renameExt, escapeHtml, EXT,
+    openPdf, renderPdfPage, pdfLoadError,
+  };
 })();

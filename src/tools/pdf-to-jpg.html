@@ -1,0 +1,57 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">📄</span>
+  <strong>Drop a PDF here or click to choose</strong>
+  <small>Every page becomes an image</small>
+  <input type="file" accept="application/pdf,.pdf">
+</label>
+<div id="options" hidden>
+  <p class="status" id="info"></p>
+  <div class="controls">
+    <label class="field">Format
+      <select id="format">
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+      </select>
+    </label>
+    <label class="field">Resolution
+      <select id="dpi">
+        <option value="72">Low – 72 DPI (screen)</option>
+        <option value="150" selected>Medium – 150 DPI</option>
+        <option value="300">High – 300 DPI (print)</option>
+      </select>
+    </label>
+    <label class="field field--grow">Pages (optional)
+      <input id="pages" type="text" placeholder="All pages, or e.g. 1-3, 5">
+    </label>
+  </div>
+  <div class="btn-row">
+    <button class="btn" id="convert" type="button">Convert to images</button>
+    <button class="btn btn--ghost" id="reset" type="button">Choose another PDF</button>
+  </div>
+  <p class="status" id="status"></p>
+  <ul class="file-list" id="results"></ul>
+  <div class="btn-row" id="all-wrap" hidden><button class="btn" id="download-all" type="button">Download all images</button></div>
+</div>
+<!-- content -->
+<h2>How to convert a PDF to JPG</h2>
+<ol>
+  <li>Choose the PDF file you want to convert.</li>
+  <li>Pick <strong>JPG</strong> (smaller files) or <strong>PNG</strong> (sharpest text and lines).</li>
+  <li>Choose a resolution: 150 DPI is great for screens and sharing, while 300 DPI suits printing.</li>
+  <li>Optionally list only the pages you need, then click <strong>Convert to images</strong>.</li>
+  <li>Download single pages or all images at once.</li>
+</ol>
+
+<h2>Why convert PDF pages to images?</h2>
+<ul>
+  <li><strong>Share on social media or chat apps</strong>, which show images inline but not PDFs.</li>
+  <li><strong>Insert a page into slides or documents</strong> as a picture.</li>
+  <li><strong>Upload to sites that only accept JPG/PNG</strong>, such as some application portals and marketplaces.</li>
+  <li><strong>Create thumbnails or previews</strong> of reports, menus and brochures.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>JPG or PNG — which is better?</summary><p>JPG files are much smaller and ideal for pages with photos. PNG is lossless and keeps small text and thin lines crisp, but files are larger.</p></details>
+<details><summary>What DPI should I choose?</summary><p>72 DPI matches the PDF's on-screen size. 150 DPI doubles the detail and suits most uses. 300 DPI is print quality, but creates large files and takes longer for long documents.</p></details>
+<details><summary>Is my PDF uploaded?</summary><p>No. Pages are rendered by your browser using the open-source pdf.js engine, so your document stays on your device.</p></details>
+<details><summary>Can I convert images back to a PDF?</summary><p>Yes. Use our <a href="/image-to-pdf/">Image to PDF</a> tool.</p></details>

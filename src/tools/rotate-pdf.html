@@ -1,0 +1,41 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">🔃</span>
+  <strong>Drop a PDF here or click to choose</strong>
+  <small>Rotate all pages or just the ones you click</small>
+  <input type="file" accept="application/pdf,.pdf">
+</label>
+<div id="options" hidden>
+  <p class="status" id="info"></p>
+  <div class="btn-row" style="margin-top:0">
+    <button class="btn btn--ghost" id="all-left" type="button">⟲ Rotate all left</button>
+    <button class="btn btn--ghost" id="all-right" type="button">⟳ Rotate all right</button>
+    <button class="btn btn--ghost" id="clear-rot" type="button">Reset</button>
+  </div>
+  <p class="status">Click a page to rotate it 90° clockwise.</p>
+  <div class="page-grid" id="grid"></div>
+  <div class="btn-row">
+    <button class="btn" id="save" type="button">Save rotated PDF</button>
+    <button class="btn btn--ghost" id="reset" type="button">Choose another PDF</button>
+  </div>
+  <p class="status" id="status"></p>
+</div>
+<!-- content -->
+<h2>How to rotate PDF pages</h2>
+<ol>
+  <li>Choose your PDF. A preview of every page appears.</li>
+  <li>Click any page to turn it 90° clockwise. Click again to keep turning it.</li>
+  <li>Or use <strong>Rotate all left/right</strong> to turn every page at once.</li>
+  <li>Click <strong>Save rotated PDF</strong>. The rotation is saved permanently, so it looks right in every PDF viewer.</li>
+</ol>
+
+<h2>Common reasons to rotate a PDF</h2>
+<ul>
+  <li>Scanned pages that came out <strong>sideways or upside down</strong>.</li>
+  <li>A landscape table or chart mixed into a portrait document.</li>
+  <li>Phone scans where a few pages were captured in the wrong orientation.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Does rotating affect quality?</summary><p>No. Rotation only changes the page's orientation setting. Text, images and links are untouched, and text stays selectable.</p></details>
+<details><summary>Is my PDF uploaded?</summary><p>No. Previews and rotation are handled in your browser, and your file never leaves your device.</p></details>
+<details><summary>Can I delete or reorder pages too?</summary><p>Yes. Use <a href="/split-pdf/">Split PDF</a> to extract or reorder pages, and <a href="/merge-pdf/">Merge PDF</a> to combine files.</p></details>

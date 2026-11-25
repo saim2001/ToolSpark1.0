@@ -1,0 +1,48 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">🗜️</span>
+  <strong>Drop a PDF here or click to choose</strong>
+  <small>Works best on scanned documents and image-heavy PDFs</small>
+  <input type="file" accept="application/pdf,.pdf">
+</label>
+<div id="options" hidden>
+  <p class="status" id="info"></p>
+  <div class="controls">
+    <label class="field">Compression level
+      <select id="level">
+        <option value="72,0.5">Extreme – smallest file, lower quality</option>
+        <option value="110,0.65" selected>Recommended – good quality, small file</option>
+        <option value="150,0.8">Light – high quality</option>
+      </select>
+    </label>
+    <label class="check"><input id="gray" type="checkbox"> Convert to grayscale (even smaller)</label>
+  </div>
+  <div class="btn-row">
+    <button class="btn" id="compress" type="button">Compress PDF</button>
+    <button class="btn btn--ghost" id="reset" type="button">Choose another PDF</button>
+  </div>
+  <p class="status" id="status"></p>
+  <div class="btn-row" id="result" hidden>
+    <button class="btn" id="download" type="button">Download compressed PDF</button>
+  </div>
+</div>
+<!-- content -->
+<h2>How to compress a PDF</h2>
+<ol>
+  <li>Choose the PDF that's too large.</li>
+  <li>Pick a compression level. <strong>Recommended</strong> keeps text readable while cutting the size of most scans by 50–90%.</li>
+  <li>Click <strong>Compress PDF</strong>. You'll see the old and new size before downloading.</li>
+</ol>
+
+<h2>How it works (and when to use it)</h2>
+<p>This tool re-draws each page as an optimized image at a lower resolution and re-builds the PDF. That makes it very effective for:</p>
+<ul>
+  <li><strong>Scanned documents</strong> and photos of paperwork from your phone</li>
+  <li><strong>Image-heavy PDFs</strong> such as brochures, portfolios and photo reports</li>
+  <li>Getting under <strong>upload limits</strong> on email (often 20–25 MB), job portals and government sites (often 1–2 MB)</li>
+</ul>
+<p><strong>Good to know:</strong> because pages become images, text in the compressed PDF can't be selected or searched, and links stop working. For text-only PDFs exported from Word or Google Docs, the original is usually already small. If compression wouldn't help, we'll tell you.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is my PDF uploaded to a server?</summary><p>No. Unlike most PDF compressors, everything happens in your browser. That matters for bank statements, contracts and ID documents.</p></details>
+<details><summary>Which level should I choose?</summary><p>Start with Recommended. If the file is still too big, try Extreme or turn on grayscale. If small text looks blurry, use Light.</p></details>
+<details><summary>Why did my file get bigger?</summary><p>PDFs made of pure text and vector graphics are already compact, so turning them into images can increase the size. In that case, keep your original file.</p></details>

@@ -1,0 +1,44 @@
+<div class="two-col">
+  <label class="field">Input
+    <textarea id="input" class="mono" spellcheck="false" placeholder="Paste text or a URL…" style="min-height:160px"></textarea>
+  </label>
+  <label class="field">Output
+    <textarea id="output" class="mono" spellcheck="false" readonly style="min-height:160px"></textarea>
+  </label>
+</div>
+<p class="status" id="status"></p>
+<div class="controls">
+  <label class="check"><input id="plus" type="checkbox"> Treat + as space when decoding (form data)</label>
+</div>
+<div class="btn-row">
+  <button class="btn" id="encode" type="button">Encode component</button>
+  <button class="btn btn--ghost" id="encode-uri" type="button">Encode full URL</button>
+  <button class="btn" id="decode" type="button">Decode</button>
+  <button class="btn btn--ghost" id="swap" type="button">Swap</button>
+  <button class="btn btn--ghost" id="copy" type="button">Copy output</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<div id="parts-wrap" hidden>
+  <h3>URL breakdown</h3>
+  <table class="kv" id="parts"></table>
+</div>
+<!-- content -->
+<h2>What is URL encoding?</h2>
+<p>URLs can only contain a limited set of characters. Spaces, accented letters, emoji and symbols like <code>&amp;</code>, <code>?</code> and <code>#</code> must be <strong>percent-encoded</strong>: each byte becomes <code>%</code> followed by two hex digits. For example, a space becomes <code>%20</code> and <code>é</code> becomes <code>%C3%A9</code>.</p>
+
+<h2>Encode component vs. encode full URL</h2>
+<table>
+  <thead><tr><th>Button</th><th>Use it for</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Encode component</strong></td><td>A single value inside a URL, like a search term or query parameter. Encodes <code>/ ? &amp; = #</code> too.</td><td><code>rock &amp; roll</code> → <code>rock%20%26%20roll</code></td></tr>
+    <tr><td><strong>Encode full URL</strong></td><td>A whole URL that contains spaces or non-English characters. Keeps <code>/ ? &amp; = #</code> intact.</td><td><code>https://x.com/a b</code> → <code>https://x.com/a%20b</code></td></tr>
+  </tbody>
+</table>
+
+<h2>URL breakdown</h2>
+<p>When the input is a full URL, the tool splits it into protocol, host, path, query parameters and fragment, with every parameter decoded. That makes long tracking links, redirect URLs and API requests easy to read and debug.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Why does my decoded URL still contain %25?</summary><p><code>%25</code> is an encoded percent sign, which means the text was encoded twice. Click <strong>Decode</strong> again to decode the second layer.</p></details>
+<details><summary>When should I treat + as a space?</summary><p>HTML forms encode spaces as <code>+</code> in query strings (<code>application/x-www-form-urlencoded</code>). Tick the option when decoding form submissions or search URLs like <code>?q=hello+world</code>.</p></details>
+<details><summary>Is my data sent anywhere?</summary><p>No. Encoding and decoding happen in your browser.</p></details>

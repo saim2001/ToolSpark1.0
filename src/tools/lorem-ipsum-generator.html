@@ -1,0 +1,36 @@
+<div class="controls" style="margin-top:0">
+  <label class="field">Amount<input id="count" type="number" min="1" max="500" value="3"></label>
+  <label class="field">Of
+    <select id="unit">
+      <option value="paragraphs">Paragraphs</option>
+      <option value="sentences">Sentences</option>
+      <option value="words">Words</option>
+    </select>
+  </label>
+  <label class="check"><input id="classic" type="checkbox" checked> Start with "Lorem ipsum dolor sit amet…"</label>
+  <label class="check"><input id="html" type="checkbox"> Wrap in &lt;p&gt; tags</label>
+</div>
+<div class="btn-row">
+  <button class="btn" id="generate" type="button">Generate</button>
+  <button class="btn btn--ghost" id="copy" type="button">Copy</button>
+</div>
+<p class="status" id="stats"></p>
+<label class="visually-hidden" for="output">Generated text</label>
+<textarea id="output" readonly></textarea>
+<!-- content -->
+<h2>What is Lorem Ipsum?</h2>
+<p>Lorem ipsum is placeholder text used in design, publishing and web development. It shows how a layout will look with real-looking text before the final copy is ready. Because it reads as nonsense, people focus on the design instead of getting distracted by the words.</p>
+<p>The text comes from <em>De finibus bonorum et malorum</em>, a philosophical work by Cicero written in 45 BC. Printers have used scrambled versions of it as dummy text since the 1500s, and it became standard in desktop publishing in the 1980s.</p>
+
+<h2>How to use the generator</h2>
+<ol>
+  <li>Enter how many <strong>paragraphs</strong>, <strong>sentences</strong> or <strong>words</strong> you need.</li>
+  <li>Keep "Start with Lorem ipsum…" ticked for the classic opening, or untick it for fully random text.</li>
+  <li>Tick <strong>Wrap in &lt;p&gt; tags</strong> to get HTML ready to paste into a web page.</li>
+  <li>Click <strong>Copy</strong> and paste it into your design tool, CMS or code.</li>
+</ol>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is the generated text different every time?</summary><p>Yes. Sentences are randomly assembled from the traditional Latin vocabulary, so each click gives fresh text with natural-looking sentence and paragraph lengths.</p></details>
+<details><summary>Can I use it commercially?</summary><p>Yes. Lorem ipsum is in the public domain and free for any purpose.</p></details>
+<details><summary>How many words are in a typical paragraph?</summary><p>Generated paragraphs contain 4–8 sentences, about 40–100 words, which is similar to paragraphs in articles and on websites.</p></details>

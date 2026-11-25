@@ -1,0 +1,47 @@
+<div class="two-col">
+  <label class="field">Original text
+    <textarea id="a" class="mono" spellcheck="false" placeholder="Paste the original version…"></textarea>
+  </label>
+  <label class="field">Changed text
+    <textarea id="b" class="mono" spellcheck="false" placeholder="Paste the new version…"></textarea>
+  </label>
+</div>
+<div class="controls">
+  <label class="check"><input id="ignore-case" type="checkbox"> Ignore case</label>
+  <label class="check"><input id="ignore-space" type="checkbox"> Ignore whitespace</label>
+  <label class="check"><input id="only-changes" type="checkbox" checked> Show only changes (with context)</label>
+</div>
+<div class="btn-row">
+  <button class="btn" id="compare" type="button">Compare</button>
+  <button class="btn btn--ghost" id="swap" type="button">Swap</button>
+  <button class="btn btn--ghost" id="clear" type="button">Clear</button>
+</div>
+<p class="status" id="summary"></p>
+<div class="diff-wrap" id="result" hidden></div>
+<!-- content -->
+<h2>How to compare two texts</h2>
+<ol>
+  <li>Paste the original text on the left and the changed version on the right.</li>
+  <li>Click <strong>Compare</strong>.</li>
+  <li>Removed lines are shown in <span style="background:rgba(220,38,38,.2);padding:0 4px;border-radius:3px">red</span> and added lines in <span style="background:rgba(22,163,74,.2);padding:0 4px;border-radius:3px">green</span>. The exact words that changed within a line are highlighted more strongly.</li>
+</ol>
+
+<h2>What can I compare?</h2>
+<ul>
+  <li><strong>Document revisions</strong>: see what an editor or co-author changed in an essay, contract or article.</li>
+  <li><strong>Code</strong>: compare two versions of a config file, script or SQL query.</li>
+  <li><strong>Lists and data</strong>: find which rows were added or removed between two exports.</li>
+  <li><strong>Plagiarism checks</strong>: quickly spot copied passages between two texts.</li>
+</ul>
+
+<h2>Options</h2>
+<ul>
+  <li><strong>Ignore case</strong> treats "Hello" and "hello" as identical.</li>
+  <li><strong>Ignore whitespace</strong> ignores differences in spaces and indentation, which is useful for code and copy-pasted text.</li>
+  <li><strong>Show only changes</strong> hides long unchanged sections and keeps 3 lines of context around each change.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Is my text sent to a server?</summary><p>No. The comparison runs in your browser, so confidential documents and code stay private.</p></details>
+<details><summary>How does the comparison work?</summary><p>It uses the Myers diff algorithm, the same approach used by Git, to find the smallest set of line insertions and deletions. Then it compares changed lines word by word.</p></details>
+<details><summary>How large can the texts be?</summary><p>Thousands of lines compare instantly. Very large inputs with many differences may take a few seconds.</p></details>

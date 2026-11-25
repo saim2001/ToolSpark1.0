@@ -1,0 +1,56 @@
+<label class="dropzone" tabindex="0">
+  <span class="dropzone__icon" aria-hidden="true">↪️</span>
+  <strong>Drop an image here or click to choose</strong>
+  <small>JPG, PNG, WebP, GIF or BMP</small>
+  <input type="file" accept="image/*">
+</label>
+<div id="editor" hidden>
+  <div class="btn-row" style="margin-top:0">
+    <button class="btn btn--ghost" type="button" id="left">⟲ Rotate left</button>
+    <button class="btn btn--ghost" type="button" id="right">⟳ Rotate right</button>
+    <button class="btn btn--ghost" type="button" id="flip-h">⇋ Flip horizontal</button>
+    <button class="btn btn--ghost" type="button" id="flip-v">⇵ Flip vertical</button>
+  </div>
+  <div class="controls">
+    <label class="field">Fine angle: <output id="angle-out">0°</output>
+      <input id="angle" type="range" min="-45" max="45" step="0.5" value="0">
+    </label>
+    <label class="field">Background (for angled rotation)
+      <select id="bg">
+        <option value="transparent">Transparent (PNG/WebP)</option>
+        <option value="#ffffff">White</option>
+        <option value="#000000">Black</option>
+      </select>
+    </label>
+    <label class="field">Format
+      <select id="format">
+        <option value="image/jpeg">JPG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+      </select>
+    </label>
+  </div>
+  <div class="preview"><canvas id="preview"></canvas></div>
+  <p class="status" id="size" style="text-align:center"></p>
+  <div class="btn-row">
+    <button class="btn" id="download" type="button">Download</button>
+    <button class="btn btn--ghost" id="reset-edits" type="button">Reset</button>
+    <button class="btn btn--ghost" id="reset" type="button">Choose another image</button>
+  </div>
+</div>
+<!-- content -->
+<h2>How to rotate or flip an image</h2>
+<ol>
+  <li>Choose the image you want to fix.</li>
+  <li>Click <strong>Rotate left</strong> or <strong>Rotate right</strong> to turn it 90° at a time, or use the <strong>flip</strong> buttons to mirror it.</li>
+  <li>To straighten a tilted horizon, drag the <strong>fine angle</strong> slider. The extra corners are filled with the background you choose.</li>
+  <li>Click <strong>Download</strong> to save the result at full resolution.</li>
+</ol>
+
+<h2>Why is my photo sideways?</h2>
+<p>Phones often save photos in the orientation the sensor captured, plus a small "rotate me" tag (EXIF orientation). Some apps, websites and older software ignore that tag, so the photo appears sideways. Rotating it here bakes the correct orientation into the pixels, so it displays correctly everywhere.</p>
+
+<h2>Frequently asked questions</h2>
+<details><summary>Does rotating by 90° lose quality?</summary><p>Rotating by 90° or 180° moves pixels without blending them, so no detail is lost. Saving as JPG re-compresses the image, so choose PNG if you need a perfect copy.</p></details>
+<details><summary>When should I flip an image?</summary><p>Front cameras often save mirrored selfies, so text on your shirt reads backwards. Use <strong>Flip horizontal</strong> to fix it. Flipping is also handy for design layouts that need a subject facing the other way.</p></details>
+<details><summary>Is my image uploaded?</summary><p>No. Everything happens in your browser, and your image never leaves your device.</p></details>

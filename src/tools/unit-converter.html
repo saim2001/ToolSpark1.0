@@ -1,0 +1,47 @@
+<div class="controls" style="margin-top:0">
+  <label class="field">Measurement
+    <select id="category"></select>
+  </label>
+</div>
+<div class="two-col" style="margin-top:14px">
+  <div class="field">From
+    <div class="output-box"><input id="from-value" type="text" inputmode="decimal" value="1" aria-label="From value"><select id="from-unit" aria-label="From unit"></select></div>
+  </div>
+  <div class="field">To
+    <div class="output-box"><input id="to-value" type="text" inputmode="decimal" aria-label="To value"><select id="to-unit" aria-label="To unit"></select></div>
+  </div>
+</div>
+<div class="btn-row">
+  <button class="btn btn--ghost" id="swap" type="button">⇄ Swap units</button>
+  <button class="btn btn--ghost" id="copy" type="button">Copy result</button>
+</div>
+<p class="status" id="formula"></p>
+<h3 id="all-title">All conversions</h3>
+<table class="kv" id="all"></table>
+<!-- content -->
+<h2>How to use the unit converter</h2>
+<ol>
+  <li>Choose what you're measuring: length, weight, temperature, volume, area, speed, time, data, pressure or energy.</li>
+  <li>Type a number in either box. The other side updates instantly, and you can convert in both directions.</li>
+  <li>The table underneath converts your value into every unit in the category at once.</li>
+</ol>
+
+<h2>Most searched conversions</h2>
+<table>
+  <thead><tr><th>Conversion</th><th>Exact value</th></tr></thead>
+  <tbody>
+    <tr><td>1 inch to cm</td><td>2.54 cm</td></tr>
+    <tr><td>1 foot to meters</td><td>0.3048 m</td></tr>
+    <tr><td>1 mile to km</td><td>1.609344 km</td></tr>
+    <tr><td>1 kg to pounds</td><td>2.20462 lb</td></tr>
+    <tr><td>1 ounce to grams</td><td>28.3495 g</td></tr>
+    <tr><td>°C to °F</td><td>°F = °C × 9/5 + 32</td></tr>
+    <tr><td>1 US gallon to liters</td><td>3.78541 L</td></tr>
+    <tr><td>1 GB to MB</td><td>1,000 MB (or 1,024 MiB per GiB)</td></tr>
+  </tbody>
+</table>
+
+<h2>Frequently asked questions</h2>
+<details><summary>What's the difference between GB and GiB?</summary><p>A gigabyte (GB) is 1,000,000,000 bytes, the decimal unit used by drive makers. A gibibyte (GiB) is 1,073,741,824 bytes (2³⁰), which Windows reports as "GB". That's why a 1 TB drive shows about 931 GB on a PC.</p></details>
+<details><summary>Are US and UK gallons the same?</summary><p>No. A US gallon is 3.785 liters, and an imperial (UK) gallon is 4.546 liters, about 20% larger. Both are available in the volume converter.</p></details>
+<details><summary>How accurate are the conversions?</summary><p>Conversions use the exact international definitions (for example, 1 inch = 2.54 cm exactly), and results are shown to 10 significant digits.</p></details>
