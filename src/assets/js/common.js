@@ -82,9 +82,16 @@
     });
   }
 
+  // Browsers silently export PNG when they can't encode the requested type (Safari and WebP).
+  function canEncode(type) {
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 1;
+    return canvas.toDataURL(type).startsWith('data:' + type);
+  }
+
   function canvasToBlob(canvas, type, quality) {
     return new Promise((resolve, reject) =>
-      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Your browser cannot export ' + type))), type, quality));
+      canvas.toBlob((b) => (b && b.type === type ? resolve(b) : reject(new Error('Your browser cannot export ' + type))), type, quality));
   }
 
   // Draw an image to a canvas at the given size. JPEG has no transparency, so fill white first.
@@ -131,6 +138,15 @@
     return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
+  // Don't offer WebP output where the browser can't produce it.
+  const webpOption = $('#format option[value="image/webp"]');
+  if (webpOption && !canEncode('image/webp')) {
+    const note = document.createElement('small');
+    note.textContent = "This browser can't save WebP";
+    webpOption.closest('.field').appendChild(note);
+    webpOption.remove();
+  }
+
   // Theme toggle
   const toggle = $('.theme-toggle');
   if (toggle) {
@@ -144,7 +160,7 @@
   }
 
   window.TS = {
-    $, $$, formatBytes, toast, copyText, download, dropzone, loadImage, canvasToBlob, drawToCanvas, renameExt, escapeHtml, EXT,
+    $, $$, formatBytes, toast, copyText, download, dropzone, loadImage, canEncode, canvasToBlob, drawToCanvas, renameExt, escapeHtml, EXT,
     openPdf, renderPdfPage, pdfLoadError,
   };
 })();

@@ -1,5 +1,5 @@
 (function () {
-  const { $, dropzone, loadImage, canvasToBlob, renameExt, download, toast } = window.TS;
+  const { $, dropzone, loadImage, canEncode, canvasToBlob, renameExt, download, toast } = window.TS;
   let img = null;
   let file = null;
   const state = { quarter: 0, fine: 0, flipH: false, flipV: false };
@@ -11,7 +11,7 @@
       return toast(err.message);
     }
     file = f;
-    if (['image/png', 'image/webp'].includes(f.type)) $('#format').value = f.type;
+    if (['image/png', 'image/webp'].includes(f.type)) $('#format').value = canEncode(f.type) ? f.type : 'image/png';
     $('.dropzone').hidden = true;
     $('#editor').hidden = false;
     resetEdits();

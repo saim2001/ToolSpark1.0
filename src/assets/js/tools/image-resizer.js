@@ -1,5 +1,5 @@
 (function () {
-  const { $, $$, formatBytes, dropzone, loadImage, canvasToBlob, drawToCanvas, renameExt, download, toast } = window.TS;
+  const { $, $$, formatBytes, dropzone, loadImage, canEncode, canvasToBlob, drawToCanvas, renameExt, download, toast } = window.TS;
   const widthIn = $('#width');
   const heightIn = $('#height');
   const lock = $('#lock');
@@ -16,7 +16,7 @@
     file = f;
     widthIn.value = img.naturalWidth;
     heightIn.value = img.naturalHeight;
-    if (['image/png', 'image/webp'].includes(f.type)) $('#format').value = f.type;
+    if (['image/png', 'image/webp'].includes(f.type)) $('#format').value = canEncode(f.type) ? f.type : 'image/png';
     $('#original').textContent = `Original: ${img.naturalWidth} × ${img.naturalHeight} px · ${formatBytes(f.size)}`;
     $('.dropzone').hidden = true;
     $('#editor').hidden = false;

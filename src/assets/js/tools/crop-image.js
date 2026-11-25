@@ -1,5 +1,5 @@
 (function () {
-  const { $, dropzone, loadImage, canvasToBlob, drawToCanvas, renameExt, download, toast } = window.TS;
+  const { $, dropzone, loadImage, canEncode, canvasToBlob, drawToCanvas, renameExt, download, toast } = window.TS;
   const stage = $('#stage');
   const imgEl = $('#img');
   const boxEl = $('#box');
@@ -19,7 +19,7 @@
     W = img.naturalWidth;
     H = img.naturalHeight;
     imgEl.src = img.src;
-    if (['image/png', 'image/webp'].includes(f.type)) $('#format').value = f.type;
+    if (['image/png', 'image/webp'].includes(f.type)) $('#format').value = canEncode(f.type) ? f.type : 'image/png';
     $('.dropzone').hidden = true;
     $('#editor').hidden = false;
     applyRatio();

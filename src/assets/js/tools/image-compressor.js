@@ -1,5 +1,5 @@
 (function () {
-  const { $, formatBytes, dropzone, loadImage, canvasToBlob, drawToCanvas, renameExt, download, escapeHtml } = window.TS;
+  const { $, formatBytes, dropzone, loadImage, canEncode, canvasToBlob, drawToCanvas, renameExt, download, escapeHtml } = window.TS;
   const list = $('#files');
   const quality = $('#quality');
   const items = []; // { file, img, li, result }
@@ -35,11 +35,14 @@
     let { naturalWidth: w, naturalHeight: h } = item.img;
     if (maxW > 0 && w > maxW) { h = (h * maxW) / w; w = maxW; }
     const canvas = drawToCanvas(item.img, w, h, type);
-    let blob = await canvasToBlob(canvas, type, quality.value / 100);
+    const encodable = canEncode(type);
+    let blob = encodable ? await canvasToBlob(canvas, type, quality.value / 100) : item.file;
     if (run !== item.run) return; // settings changed while encoding; a newer run owns the result
     let note = '';
     // If re-encoding didn't help and nothing else changed, keep the original file.
-    if (blob.size >= item.file.size && type === item.file.type && !(maxW > 0 && item.img.naturalWidth > maxW)) {
+    if (!encodable) {
+      note = ` · this browser can't compress WebP, choose JPG instead`;
+    } else if (blob.size >= item.file.size && type === item.file.type && !(maxW > 0 && item.img.naturalWidth > maxW)) {
       blob = item.file;
       note = ' · already optimized';
     }
