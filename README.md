@@ -32,14 +32,14 @@ scripts/build.js        Wraps pages in the layout; writes sitemap.xml, robots.tx
 
 The home page, footer, related-tools links and sitemap update automatically.
 
-## Before going live
+## Deploying
 
-1. Buy a domain, then set `url` and `email` in `site.config.json`.
-2. **Deploy on Cloudflare Pages (free):** push this repo to GitHub, then go to Cloudflare dashboard → Workers & Pages → Create → Pages → connect the repo.
-   - Build command: `npm run build`
-   - Output directory: `dist`
-   - Then add your custom domain in the project settings.
-3. Add the site to [Google Search Console](https://search.google.com/search-console) and submit `https://yourdomain.com/sitemap.xml`.
+The site deploys from GitHub to Cloudflare Pages (Workers & Pages → Create → Pages → connect the repo):
+- Build command: `npm run build`
+- Output directory: `dist`
+- Custom domain: `kitkettle.com`
+
+Every push to `main` redeploys. If you change the Privacy Policy or Terms, update their "Last updated" date by hand.
 
 ## Turning on AdSense
 
